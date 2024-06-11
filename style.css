@@ -1,0 +1,383 @@
+@font-face {
+    font-family: "SourceSans";
+    src: url("SourceSansPro-Regular.ttf");
+}
+
+#userNameHtag{
+    visibility: hidden;
+}
+
+.bg {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: 300% 300%;
+    background-image: linear-gradient(-45deg, #328ad4bd 0%, #2fcad1bf 25%, #56de97 51%, #b1d81596 100%);
+    -webkit-animation: AnimateBG 20s ease infinite;
+    animation: AnimateBG 20s ease infinite;
+}
+
+@-webkit-keyframes AnimateBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes AnimateBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: #EEEEEE;
+    margin: 0;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+    background-color: red;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.topBar {
+    box-shadow: rgba(17, 17, 26, 0.2) 0px 0px 16px;
+    color: #EEEEEE;
+    margin-top: 2vw;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80vw;
+    height: 7vw;
+    box-sizing: border-box;
+    background-color: #333333f5;
+
+    text-align: center;
+    font-size: 1.3vw;
+    font-weight: 500;
+
+
+}
+
+.topBar p {
+    display: inline-block;
+}
+
+.btnAddTask {
+    border: none;
+    display: inline-block;
+    margin-left: 38vw;
+    border-radius: 3vw;
+    font-size: 3vw;
+    width: 14vw;
+    height: 5vw;
+    font-weight: 500;
+    background-color: #EEEEEE;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    font-style: oblique;
+}
+
+.btnAddTask:hover {
+    cursor: pointer;
+    background-color: rgb(208, 208, 208);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.app {
+    box-shadow: rgba(17, 17, 26, 0.2) 0px 0px 16px;
+    color: #222831;
+    text-align: left;
+    margin-top: 0;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0vw 5vw 2vw 5vw;
+    box-sizing: border-box;
+    width: 90vw;
+    height: 80vw;
+    background-color: #ff860f6b;
+
+    position: relative;
+
+}
+
+.taskListTitle {
+    display: inline-block;
+    font-size: 4vw;
+    font-weight: 600;
+    margin-left: 3vw;
+}
+
+.taskList {
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    background-color: #fcfcfcd6;
+    Overflow-y: scroll;
+
+    margin-top: 3vw;
+    padding: 2vw;
+    border-radius: 1vw;
+    box-sizing: border-box;
+    height: 50vw;
+
+}
+
+.task_name {
+    font-size: 3.5vw;
+    font-weight: 500;
+    display: inline-block;
+    left: 2vw;
+    color: #393E46;
+    font-weight: 500;
+}
+
+.task {
+    background-color: #e0e0e0ad;
+    border-bottom: #393e46e2 solid .28vw;
+    width: 100%;
+}
+
+.task:hover {
+    background-color: #dbdbdb;
+}
+
+.task:first-child {
+    border-top-left-radius: 1.5vw;
+    border-top-right-radius: 1.5vw;
+}
+
+.task:last-child {
+    border-bottom-left-radius: 1.5vw;
+    border-bottom-right-radius: 1.5vw;
+    border: none;
+}
+
+.taskContainer {
+    display: inline-block;
+    width: 55vw;
+    max-width: 55vw;
+    position: relative;
+    left: 0;
+    height: auto;
+    box-sizing: border-box;
+    padding: 0 3vw 0 3vw;
+}
+
+.task_checkBox {
+    position: relative;
+    left: 17.4vw;
+    top: .32vw;
+    height: 3.4vw;
+    width: 3.4vw;
+
+}
+
+.task_remove {
+    position: relative;
+    left: 17.4vw;
+    top: 1vw;
+    height: 1.8vw;
+    width: 1.8vw;
+    z-index: 1;
+    font-weight: 100;
+    padding: 0;
+    background: none;
+    border: none;
+}
+
+.embedTrash {
+    width: 1.8vw;
+    height: 1.8vw;
+    z-index: -1;
+
+}
+
+.botBar {
+    box-shadow: rgba(17, 17, 26, 0.2) 0px 0px 16px;
+    color: #EEEEEE;
+    height: 7vw;
+    width: 90vw;
+
+    background-color: #333333f5;
+    margin: auto;
+
+    box-sizing: border-box;
+    text-align: left;
+    font-size: 1.3vw;
+
+    text-align: center;
+    padding-top: 2vw;
+}
+
+.taskList::-webkit-scrollbar {
+    opacity: 0;
+    width: 0;
+}
+
+.lineThrough {
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 300,
+        'GRAD' 0,
+        'opsz' 40
+}
+
+@media screen and (min-width: 900px) {
+
+
+    .topBar,
+    .botBar,
+    .app {
+        width: 50vw;
+
+    }
+
+    .taskListTitle {
+        font-size: 1.7vw;
+        margin-left: 1vw;
+    }
+
+    .topBar,
+    .botBar {
+        height: 4vw;
+
+    }
+
+    .app {
+        height: 30vw;
+    }
+
+    .btnAddTask {
+        width: 7vw;
+        height: 2.5vw;
+        font-size: 1.2vw;
+        margin-left: 28vw;
+    }
+
+    .app {
+        padding: 0vw 1vw 2vw 1vw;
+    }
+
+    .taskList {
+        margin-top: 1vw;
+        height: 21vw;
+        width: 90%;
+        margin-left: 5%;
+        padding: 1vw;
+    }
+
+    .botBar {
+        padding-top: 1vw;
+    }
+
+    .task_name {
+        font-size: 1.5vw;
+    }
+
+    .task_remove {
+        left: 12vw;
+        top: .3vw;
+        height: 1.955vw;
+        width: 1.8vw;
+        font-size: 38px;
+        z-index: 1;
+        background-image: url(trash.svg);
+    }
+
+    .material-symbols-outlined {
+        font-size: 38px;
+    }
+
+    .taskContainer {
+        padding: 0 1vw 0 2vw;
+        width: 19vw;
+    }
+
+    .task_checkBox {
+        height: 1.7vw;
+        width: 1.7vw;
+    }
+}
